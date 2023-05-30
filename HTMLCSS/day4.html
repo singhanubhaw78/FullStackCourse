@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: relative;
+        }
+        p{
+            /* display: inline-block; */
+        }
+       
+        p::after{
+            content: "";
+            /* height: 2px;
+            width: 100%; */
+            background-color: red;
+            position: absolute;
+            bottom: -4px;
+            left: -2px;
+            /* transition: width  height ;
+            transition-delay: 2s;
+            transition-duration: 200ms;
+            transition-timing-function: ease; */
+        }
+        p:hover::after{
+                height: 2px;
+                width: 37%;
+        }
+        h2{
+            transition: background-color,color,width;
+            transition-delay: 10ms;
+            transition-duration: 20ms;
+        }
+        h2:hover{
+            background-color: yellow;
+            color: red;
+            width:50%;
+        }
+        .div2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(163, 9, 9);
+            transition: width height background-color;
+            transition-duration: 100ms;
+            transition-delay: 50ms;
+            transition-timing-function: ease;
+        }
+        .div2:hover{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(129, 129, 244);
+        }
+        input{
+            transition: padding outline border;
+            transition-delay: 15ms;
+            transition-duration: 20ms;
+        }
+        input:focus{
+            padding: 1rem;
+            outline: none;
+            border: none;
+        }
+
+        /* Position
+            static: acc. to normal flow
+            relative: acc to the current position of the element
+            fixed: acc. to viewport & doesn't change position even on scroll
+            absolute: position relative to the nearest positioned parent/ancestor (& not the viewport)
+            sticky: can be said to be between relative and fixed. changes upto a certain extent upon scroll 
+            and then doesn't  change.
+        */
+
+
+        /* Animations */
+        .animation{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            animation-name: example;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            position: relative;
+        }
+        /* @keyframes example{
+            from {background-color: red; 
+                top: 0px;
+                left: 0px;
+                
+            }
+            to {background-color: yellow;
+                top: 0px;
+                left: 200px;
+            }
+        } */
+
+        @keyframes example{
+            0%{
+                background-color: red;
+                top: 0px;
+                left: 0px;
+            }
+            25%{
+                background-color: yellow;
+                top: 0px;
+                left: 200px;
+            }
+            50%{
+                background-color: blue;
+                top: 200px;
+                left: 200px;
+            }
+            75%{
+                background-color: green;
+                top: 200px;
+                left: 0px;
+            }
+            100%{
+                background-color: aquamarine;
+                top: 0px;
+                left: 0;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+    <p>Lorem, ipsum dolor. Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </div>
+    <h2>Anubhaw Singh</h2>
+    <div class="div2"></div>
+    <br><br>
+    <label for="inp">Enter role</label>
+    <input type="text" id="inp">
+    <br><br>
+    <div class="animation"></div>
+</body>
+</html>
